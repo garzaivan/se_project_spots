@@ -23,4 +23,5 @@ This project showcased the powerful capabilities of CSS Grid, which proved instr
 
 ## GitHub Pages
 
-You can check out the website by visiting this link
+You can check out this
+[link to the project on GitHub Pages!](https://garzaivan.github.io/se_project_spots/)
