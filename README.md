@@ -1,21 +1,26 @@
 # Project 3: Spots
 
-### Overview  
+### Overview
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+![alt text](./images/demo/Screenshot%202025-04-26%20at%204.19.33 AM.png)
+
+### TechStack
+
+- Figma
+- HTML
+- CSS
+- DevTools
+- Responsive Design
+- Deplyment to GitHub Pages
+
+## Intro
+
+This project showcased the powerful capabilities of CSS Grid, which proved instrumental in creating a well-structured and visually appealing layout. One of the most exciting aspects was experimenting with responsive design through media queries, determining the optimal breakpoints for transitioning from one to two to three columns. Using Chrome Dev Tools as my digital laboratory, I could instantly test and visualize how different grid configurations would affect the layout across various screen sizes. This hands-on approach to testing and adjusting the grid layout made the development process feel like an engaging experiment, where each modification helped create a more polished and professional final design."
+
+## Figma
+
+[Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+
+## GitHub Pages
+
+You can check out the website by visiting this link
