@@ -17,7 +17,7 @@
 
 This project showcased the powerful capabilities of CSS Grid, which proved instrumental in creating a well-structured and visually appealing layout. One of the most exciting aspects was experimenting with responsive design through media queries, determining the optimal breakpoints for transitioning from one to two to three columns. Using Chrome Dev Tools as my digital laboratory, I could instantly test and visualize how different grid configurations would affect the layout across various screen sizes. This hands-on approach to testing and adjusting the grid layout made the development process feel like an engaging experiment, where each modification helped create a more polished and professional final design.
 
-https://drive.google.com/file/d/1vmDMx6E2YOvrQNMlEodKuC28HUr8_oTa/view?usp=drive_link
+https://drive.google.com/file/d/1vmDMx6E2YOvrQNMlEodKuC28HUr8_oTa/view?usp=sharing
 
 ## Figma
 
