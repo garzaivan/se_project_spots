@@ -55,7 +55,7 @@
   display: flex;
   gap: 8px;
   margin-top: auto;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   cursor: pointer;
 }
 
@@ -83,7 +83,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   cursor: pointer;
 }
 
