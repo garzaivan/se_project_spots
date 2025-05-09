@@ -159,9 +159,13 @@
       <footer class="footer">
         <p class="footer__copyright">2025 &copy; Spots</p>
       </footer>
-      <div class="modal modal_is-opened">
+      <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            id="edit-close-btn"
+          ></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="form modal__form">
             <label for="profile-name-input" class="modal__label"></label>
@@ -186,9 +190,13 @@
           </form>
         </div>
       </div>
-      <div class="modal modal_is-opened">
+      <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            id="new-post-close-btn"
+          ></button>
           <h2 class="modal__title">New post</h2>
           <form class="form modal__form">
             <label for="card-image-input" class="modal__label"></label>
@@ -214,5 +222,6 @@
         </div>
       </div>
     </div>
+    <script src="./blocks/index.js"></script>
   </body>
 </html>
