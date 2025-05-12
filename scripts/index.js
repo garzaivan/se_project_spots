@@ -18,7 +18,7 @@ profileEditButton.addEventListener("click", function () {
 });
 
 profileEditCloseBtn.addEventListener("click", function () {
-  profileEditModal.classList.toggle("modal_is-opened");
+  profileEditModal.classList.remove("modal_is-opened");
 });
 
 function handleEditProfileSubmit(evt) {
@@ -27,7 +27,7 @@ function handleEditProfileSubmit(evt) {
   profileDescriptionEl.textContent = profileEditDescriptionInput.value;
   console.log(profileDescriptionEl.textContent);
   console.log(profileNameEl.textContent);
-  profileEditModal.classList.toggle("modal_is-opened");
+  profileEditModal.classList.remove("modal_is-opened");
 }
 
 profileEditForm.addEventListener("submit", handleEditProfileSubmit);
@@ -53,7 +53,7 @@ profileNewPostButton.addEventListener("click", function () {
 });
 
 profileNewPostCloseBtn.addEventListener("click", function () {
-  profileNewPostModal.classList.toggle("modal_is-opened");
+  profileNewPostModal.classList.remove("modal_is-opened");
 });
 
 // Create the form submission handler.
@@ -65,7 +65,7 @@ function handleAddCardSubmit(evt) {
   console.log(profileNewPostImageLink.value);
   console.log(profileNewPostCaption.textContent);
   // Close the modal.
-  profileNewPostModal.classList.toggle("modal_is-opened");
+  profileNewPostModal.classList.remove("modal_is-opened");
 }
 
 // Create the submit listener.
