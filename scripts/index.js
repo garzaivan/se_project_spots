@@ -38,7 +38,7 @@ const profileNewPostButton = document.querySelector(".profile__add-button");
 const profileNewPostCloseBtn = profileNewPostModal.querySelector(
   "#new-post-close-btn"
 );
-const profileNewPostImageLink = document.querySelector(".card__image").src;
+const profileNewPostImageLink = document.querySelector(".card__image");
 const profileNewPostCaption = document.querySelector(".card__title");
 const profileNewPostLinkInput =
   profileNewPostForm.querySelector("#card-image-input");
@@ -47,7 +47,7 @@ const profileNewPostCaptionInput = profileNewPostForm.querySelector(
 );
 
 profileNewPostButton.addEventListener("click", function () {
-  profileNewPostLinkInput.value = profileNewPostImageLink;
+  profileNewPostLinkInput.value = profileNewPostImageLink.src;
   profileNewPostCaptionInput.value = profileNewPostCaption.textContent;
   profileNewPostModal.classList.add("modal_is-opened");
 });
@@ -59,11 +59,11 @@ profileNewPostCloseBtn.addEventListener("click", function () {
 // Create the form submission handler.
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  profileNewPostImageLink.value = profileNewPostLinkInput.value;
+  profileNewPostImageLink.src = profileNewPostLinkInput.value;
   profileNewPostCaption.textContent = profileNewPostCaptionInput.value;
   // Log both input values to the console.
-  console.log(profileNewPostImageLink.value);
-  console.log(profileNewPostCaption.textContent);
+  console.log(profileNewPostLinkInput.value);
+  console.log(profileNewPostCaptionInput.value);
   // Close the modal.
   profileNewPostModal.classList.remove("modal_is-opened");
 }
