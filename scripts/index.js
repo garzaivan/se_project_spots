@@ -1,3 +1,30 @@
+const initialCards = [
+  {
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+  },
+  {
+    name: "An Outdoor Cafe photo",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+  },
+  {
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+  },
+  {
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  },
+  {
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+];
+
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const profileEditForm = profileEditModal.querySelector("#edit-profile-form");
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -56,17 +83,18 @@ profileNewPostCloseBtn.addEventListener("click", function () {
   profileNewPostModal.classList.remove("modal_is-opened");
 });
 
-// Create the form submission handler.
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   profileNewPostImageLink.src = profileNewPostLinkInput.value;
   profileNewPostCaption.textContent = profileNewPostCaptionInput.value;
-  // Log both input values to the console.
   console.log(profileNewPostLinkInput.value);
   console.log(profileNewPostCaptionInput.value);
-  // Close the modal.
   profileNewPostModal.classList.remove("modal_is-opened");
 }
 
-// Create the submit listener.
 profileNewPostForm.addEventListener("submit", handleAddCardSubmit);
+
+initialCards.forEach(function (item) {
+  console.log(item.name);
+  console.log(item.link);
+});
