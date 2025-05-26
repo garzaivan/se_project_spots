@@ -26,4 +26,4 @@ https://drive.google.com/file/d/1vmDMx6E2YOvrQNMlEodKuC28HUr8_oTa/view?usp=shari
 ## GitHub Pages
 
 You can check out this
-[link to the project on GitHub Pages!](https://garzaivan.github.io/se_project_spots/)
+[link to the project on GitHub Pages!]()
