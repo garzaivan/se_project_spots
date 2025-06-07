@@ -56,6 +56,8 @@ const profileNewPostButton = document.querySelector(".profile__add-button");
 const profileNewPostCloseBtn = profileNewPostModal.querySelector(
   "#new-post-close-btn"
 );
+const profileNewPostSubmitBtn =
+  profileNewPostModal.querySelector(".modal__submit-btn");
 const profileNewPostImageLink = document.querySelector(".card__image");
 const profileNewPostCaption = document.querySelector(".card__title");
 const profileNewPostLinkInput =
@@ -100,16 +102,41 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  overlayModalClose();
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+function overlayModalClose() {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (evt) => {
+      if (evt.target.classList.contains("modal")) {
+        closeModal(modal);
+      }
+    });
+  });
+}
+
+window.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape" || evt.key === "Esc") {
+    const modalOpened = document.querySelector(".modal_is-opened");
+    if (modalOpened) {
+      closeModal(modalOpened);
+    }
+  }
+});
+
 profileEditButton.addEventListener("click", function () {
   profileEditNameInput.value = profileNameEl.textContent;
   profileEditDescriptionInput.value = profileDescriptionEl.textContent;
-
+  resetValidtion(
+    profileEditForm,
+    [profileEditNameInput, profileEditDescriptionInput],
+    settings
+  );
   openModal(profileEditModal);
 });
 
@@ -148,6 +175,7 @@ function handleAddCardSubmit(evt) {
 
   closeModal(profileNewPostModal);
   profileNewPostForm.reset();
+  disableBtn(profileNewPostSubmitBtn, settings);
   console.log(inputValues);
 }
 
