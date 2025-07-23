@@ -21,7 +21,6 @@ api
   .getAppInfo()
   .then(([cards, users]) => {
     cards.forEach(function (item) {
-      console.log(item);
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
     });
@@ -138,10 +137,6 @@ function getCardElement(data) {
     handleDeleteCard(cardElement, data._id);
   });
 
-  previewCloseBtn.addEventListener("click", function () {
-    closeModal(previewModal);
-  });
-
   cardImageEl.addEventListener("click", () => {
     previewImageEl.src = data.link;
     previewImageEl.alt = data.name;
@@ -151,6 +146,10 @@ function getCardElement(data) {
 
   return cardElement;
 }
+
+previewCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});
 
 profileEditButton.addEventListener("click", function () {
   profileEditNameInput.value = profileNameEl.textContent;
@@ -174,13 +173,13 @@ function handleEditProfileSubmit(evt) {
     .then((data) => {
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
+      closeModal(profileEditModal);
     })
     .catch((err) => {
-      console.error(err);
+      console.error("Failed to update information!", err);
     })
     .finally(() => {
       changeSubmitBtnText(profileSubmitBtn, false);
-      closeModal(profileEditModal);
     });
 }
 profileEditForm.addEventListener("submit", handleEditProfileSubmit);
@@ -201,15 +200,14 @@ function handleAddCardSubmit(evt) {
     .then((data) => {
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
-      console.log(data);
+      closeModal(profileNewPostModal);
+      profileNewPostForm.reset();
     })
     .catch((err) => {
-      console.error(err);
+      console.error("Failed to add image!", err);
     })
     .finally(() => {
       changeSubmitBtnText(postSubmitBtn, false);
-      closeModal(profileNewPostModal);
-      profileNewPostForm.reset();
     });
 }
 profileNewPostForm.addEventListener("submit", handleAddCardSubmit);
@@ -226,14 +224,14 @@ function handleEditAvatarSubmit(evt) {
     .editAvatarImage(editAvatarInput.value)
     .then((data) => {
       avatarImageEl.src = data.avatar;
+      closeModal(editAvatarModal);
+      editAvatarForm.reset();
     })
     .catch((err) => {
-      console.error(err);
+      console.error("Failed to update avatar!", err);
     })
     .finally(() => {
       changeSubmitBtnText(avatarSubmitBtn, false);
-      editAvatarForm.reset();
-      closeModal(editAvatarModal);
     });
 }
 editAvatarForm.addEventListener("submit", handleEditAvatarSubmit);
@@ -253,15 +251,15 @@ function handleDeleteFormSubmit(evt) {
   api
     .deleteCard(selectedCardId)
     .then(() => {
+      selectedCard.remove();
+      closeModal(deleteModal);
       deleteForm.reset();
     })
     .catch((err) => {
-      console.error(err);
+      console.error("Failed to delete card!", err);
     })
     .finally(() => {
       changeDeleteBtnText(deleteBtn, false);
-      closeModal(deleteModal);
-      selectedCard.remove();
     });
 }
 deleteForm.addEventListener("submit", handleDeleteFormSubmit);
@@ -273,7 +271,7 @@ function handleLikeCard(evt, cardId) {
   selectedCardId = cardId;
   api.changeLikeStatus(selectedCardId, isLiked).catch((err) => {
     evt.target.classList.toggle("card__like-button_active");
-    console.error(err);
+    console.error("Failed to complete action!", err);
   });
 }
 
