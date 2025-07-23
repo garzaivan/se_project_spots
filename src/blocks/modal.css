@@ -320,8 +320,8 @@
 
 @media screen and (min-width: 320px) and (max-width: 879px) {
   .modal_type_preview,
-  .model__type_delete,
-  .model__type_edit-avatar {
+  .modal__type_delete,
+  .modal__type_edit-avatar {
     background-color: #000000dc;
   }
   .modal__preview-container {
