@@ -61,7 +61,7 @@
   opacity: 0.4;
   padding: 0;
   margin: 0;
-  transition: opacity 0.4s ease-in-out;
+  transition: background 0.3s ease-in-out, opacity 0.4s ease-in-out;
   cursor: pointer;
 }
 
@@ -72,11 +72,6 @@
 .card__like-button_active {
   background: transparent url(../images/like-icon-active.svg) center no-repeat;
   opacity: 1;
-  transition: opacity 0.4s ease-in-out;
-}
-
-.card__like-button_active:hover {
-  opacity: 0.4;
 }
 
 @media screen and (max-width: 879px) {
