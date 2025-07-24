@@ -24,7 +24,7 @@ class Api {
   getUserInfo() {
     return fetch(`${this.baseUrl}/users/me`, {
       headers: this.headers,
-    }).then.then(this.checkResponse);
+    }).then(this.checkResponse);
   }
 
   editUserInfo({ name, about }) {
@@ -45,7 +45,7 @@ class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then.then(this.checkResponse);
+    }).then(this.checkResponse);
   }
 
   addCard({ name, link }) {
@@ -56,21 +56,21 @@ class Api {
         name,
         link,
       }),
-    }).then.then(this.checkResponse);
+    }).then(this.checkResponse);
   }
 
   deleteCard(id) {
     return fetch(`${this.baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this.headers,
-    }).then.then(this.checkResponse);
+    }).then(this.checkResponse);
   }
 
   changeLikeStatus(id, isLiked) {
     return fetch(`${this.baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this.headers,
-    }).then.then(this.checkResponse);
+    }).then(this.checkResponse);
   }
 }
 
